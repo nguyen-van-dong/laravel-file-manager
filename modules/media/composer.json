@@ -1,0 +1,26 @@
+{
+    "name": "dnsoft/media",
+    "description": "This is the package to manage file media",
+    "type": "library",
+    "require": {
+        "intervention/image": "^3.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "DnSoft\\Media\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "nguyen-van-dong",
+            "email": "dongbuh@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "DnSoft\\Media\\ImageServiceProvider"
+            ]
+        }
+    }    
+}
