@@ -13,7 +13,19 @@ return new class extends Migration
     {
         Schema::create('imageservice__medias', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('folder_id')->nullable();
             $table->string('name');
+            $table->string('file_name');
+            $table->string('disk');
+            $table->string('mime_type');
+            $table->unsignedInteger('size');
+            $table->text('alt')->nullable();
+            $table->text('description')->nullable();
+
+            $table->nullableMorphs('author');
+            
+            $table->index('folder_id');
+            $table->foreign('folder_id')->references('id')->on('imageservice__folders')->onDelete('CASCADE');
             $table->timestamps();
         });
     }
